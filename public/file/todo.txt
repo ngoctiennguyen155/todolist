@@ -1,1 +1,1 @@
-[{"id":1,"status":"none","content":"Tiễn đẹp trai"}]
+[{"id":1,"status":"line-through","content":"Tiễn đẹp trai"}]
