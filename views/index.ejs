@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<title>TODO</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<style>
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Lato', sans-serif;
+  }
+
+  body,
+  html {
+    height: 100%;
+    color: #777;
+    line-height: 1.8;
+  }
+
+  /* Create a Parallax Effect */
+  .bgimg-1 {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  /* First image (Logo. Full height) */
+  .bgimg-1 {
+    background-image: url('/images/forestbridge.jpg');
+    height: 100%;
+    background-position: 0%;
+  }
+</style>
+
+<body class="bgimg-1">
+  <div class="w3-display-container" style="height:100% ;">
+    <div class="w3-display w3-center" style="white-space: nowrap;">
+      <span class="w3-center w3-black w3-xlarge w3-wide">
+        NGUYỄN NGỌC TIỄN
+      </span>
+      </br>
+      <span class="w3-center w3-black w3-xlarge w3-wide">
+        TODO LIST
+      </span>
+    </div>
+    <br>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 w3-center">
+          <form action="/" method="POST" onsubmit="return checkinput()">
+            <input id="input" type="text" name='id' placeholder="Thêm công việc.." style="width: 50%;">
+            <input type="submit" value="Thêm">
+          </form>
+          <%
+          for(var e = data.length-1; e>=0;e--){%>
+          <p style="color: white;margin: 25px;font-size:1.5em;text-decoration:<%= data[e].status %>" id='<%= data[e].id %>'
+            onclick="clicked(<%=data[e].id%>)">
+            <%= data[e].content %>
+          </p> <%
+          }
+          %>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+</body>
+<script>
+
+  function clicked(id) {
+    var txt = document.getElementById(id).style.textDecoration;
+    if (txt == "none") {
+      document.getElementById(id).style.textDecoration = "line-through";
+    } else document.getElementById(id).style.textDecoration = "none";
+  }
+
+  
+  function checkinput() {
+    var check = document.getElementById('input').value;
+    if (check == "") {
+      alert('Vui lòng nhập công việc trước khi thêm !!!');
+      document.getElementById('input').focus();
+      return false;
+    }
+  }
+
+</script>
+
+</html>
