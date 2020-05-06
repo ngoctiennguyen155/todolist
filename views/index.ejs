@@ -62,16 +62,17 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12 w3-center">
-          <form action="/" method="POST" onsubmit="return checkinput()">
-            <input id="input" type="text" name='id' placeholder="Thêm công việc.." style="width: 50%;">
+          <form action="/add" method="POST" onsubmit="return checkinput()">
+            <input id="input" type="text" name='content' placeholder="Thêm công việc.." style="width: 50%;">
             <input type="submit" value="Thêm">
           </form>
           <%
+          
           for(var e = data.length-1; e>=0;e--){%>
-          <p style="color: white;margin: 25px;font-size:1.5em;text-decoration:<%= data[e].status %>" id='<%= data[e].id %>'
-            onclick="clicked(<%=data[e].id%>)">
+          <a href="/<%= data[e].id%>"><p style="color: white;margin: 25px;font-size:1.5em;text-decoration:<%= data[e].status %>" id='<%= data[e].id %>'
+             onclick="clicked(<%=data[e].id%>)">
             <%= data[e].content %>
-          </p> <%
+          </p></a> <%
           }
           %>
 
@@ -92,7 +93,10 @@
     var txt = document.getElementById(id).style.textDecoration;
     if (txt == "none") {
       document.getElementById(id).style.textDecoration = "line-through";
-    } else document.getElementById(id).style.textDecoration = "none";
+    } else 
+    {
+      document.getElementById(id).style.textDecoration = "none";
+    }
   }
 
   
