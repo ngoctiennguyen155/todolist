@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const url = require('url');
 
 const port = 3000;
-app.listen(port, console.log(`Lisening on port on port ${port}.....`));
+app.listen(process.env.PORT|| port, console.log(`Lisening on port on port ${port}.....`));
 app.set('view engine', 'ejs');
 app.set('views', 'views')
 app.use(express.static('public'));
