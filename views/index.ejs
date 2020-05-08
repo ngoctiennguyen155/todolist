@@ -13,6 +13,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 <style>
+  img {
+    width: 50px;
+    height: 50px;
+  }
   body,
   h1,
   h2,
@@ -49,8 +53,9 @@
 <body class="bgimg-1">
   <div class="w3-display-container" style="height:100% ;">
     <div class="w3-display w3-center" style="white-space: nowrap;">
+      
       <span class="w3-center w3-black w3-xlarge w3-wide">
-        NGUYỄN NGỌC TIỄN
+       <a href="https://www.facebook.com/usernamerudy"><img src="/images/fb.png"></a> NGUYỄN NGỌC TIỄN
       </span>
       </br>
       <span class="w3-center w3-black w3-xlarge w3-wide">
@@ -62,6 +67,7 @@
     <div class="container">
       <div class="row">
         <div class="col-sm-12 w3-center">
+          
           <form action="/add" method="POST" onsubmit="return checkinput()">
             <input id="input" type="text" name='content' placeholder="Thêm công việc.." style="width: 50%;">
             <input type="submit" value="Thêm">
