@@ -41,10 +41,10 @@ app.get('/:id', function (req, res) {
      if (checkStatus === 'none') {
           x[req.params.id - 1].status = 'line-through';
           fs.writeFileSync('./public/file/todo.txt', JSON.stringify(x));
-          res.redirect('http://localhost:3000/');
+          res.redirect('https://todolistbynguyenngoctien155.herokuapp.com/');
      } else {
           x[req.params.id - 1].status = 'none';
           fs.writeFileSync('./public/file/todo.txt', JSON.stringify(x));
-          res.redirect('http://localhost:3000/');
+          res.redirect('https://todolistbynguyenngoctien155.herokuapp.com/');
      }
 })
