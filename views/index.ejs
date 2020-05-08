@@ -17,6 +17,7 @@
     width: 50px;
     height: 50px;
   }
+  
   body,
   h1,
   h2,
@@ -75,7 +76,7 @@
           <%
           
           for(var e = data.length-1; e>=0;e--){%>
-          <a href="/<%= data[e].id%>"><p style="color: white;margin: 25px;font-size:1.5em;text-decoration:<%= data[e].status %>" id='<%= data[e].id %>'
+          <a style="text-decoration: none;" href="/<%= data[e].id%>"><p style="color: white;margin: 25px;font-size:1.5em;text-decoration:<%= data[e].status %>" id='<%= data[e].id %>'
              onclick="clicked(<%=data[e].id%>)">
             <%= data[e].content %>
           </p></a> <%
