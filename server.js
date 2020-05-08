@@ -30,9 +30,10 @@ app.post('/add',urlendcode, function (req, res) {
      x = JSON.stringify(x);
      fs.writeFileSync('./public/file/todo.txt', x);
      x = JSON.parse(x);
-     res.render('index', { data: x });
+     //res.render('index', { data: x });
      //res.redirect('http://localhost:3000/');
-     res.emit();
+     res.redirect('https://todolistbynguyenngoctien155.herokuapp.com/');
+     //res.emit();
 });
 
 app.get('/:id', function (req, res) {
